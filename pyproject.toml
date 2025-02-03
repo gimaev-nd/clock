@@ -8,4 +8,5 @@ dependencies = [
     "django>=5.1.5",
     "django-cotton>=1.5.2",
     "django-htmx>=1.21.0",
+    "whitenoise>=6.8.2",
 ]
