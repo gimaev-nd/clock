@@ -1,0 +1,67 @@
+@font-face {
+    font-family: "mono";
+    src: url(/fonts/mono.ttf);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#wrapper {
+    position: relative; /* Для позиционирования div.c относительно себя */
+    width: 100%;
+    height: 100vh; /* Занимает всю высоту viewport */
+    overflow: hidden; /* Предотвращает появление скролов */
+}
+
+#video {
+    width: 100%;
+    height: 100vh; /* Занимает всю высоту viewport */
+    object-fit: cover; /* Сохраняет пропорции видео и заполняет экран */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#time {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирует div.c на странице */
+    width: 100%; /* Половина ширины от видео */
+    height: 60%; /* Половина высоты от видео */
+    display: flex; /* Для центрирования текста внутри */
+    justify-content: center; /* Горизонтальное центрирование текста */
+    align-items: center; /* Вертикальное центрирование текста */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для видимости текста */
+}
+
+#time {
+    color: white; /* Белый цвет текста для контраста */
+    font-size: 60vh; /* Размер шрифта (можно изменить по необходимости) */
+    font-family: 'mono';
+    transition: all 1s ease; /* Плавный переход длительностью 1 секунда */
+}
+
+#wrapper.night > #time {
+    height: 80%; /* Половина высоты от видео */
+    transform: translate(-50%, -30%); /* Центрирует div.c на странице */
+    font-weight: 100;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#wrapper.morning > #time {
+    font-weight: 200;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#wrapper.day > #time {
+    font-weight: 400;
+    text-shadow: 0 0 2px black, 0 0 50px black;
+    background: none;
+}
+#wrapper.evening > #time {
+    font-weight: 200;
+    background-color: rgba(0, 0, 0, 0.7);
+}

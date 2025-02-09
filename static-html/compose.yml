@@ -1,0 +1,16 @@
+services:
+  web:
+    image: python:3.12.9-alpine3.21
+    ports:
+    - 127.154.1.1:80:8000
+    working_dir: /app
+    command: python -m http.server
+    volumes:
+     - .:/app
+  web2:
+    image: nginx
+    ports:
+    - 127.154.1.2:80:80
+    - 192.168.100.12:12715:80
+    volumes:
+     - .:/usr/share/nginx/html

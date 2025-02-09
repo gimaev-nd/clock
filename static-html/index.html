@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Часики</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js"></script>
+    <!-- <meta http-equiv="refresh" content="100"> -->
+</head>
+
+<body>
+    <div id="wrapper" class="abc">
+        <video id="video" src="/videos/background.mp4">
+        </video>
+        <div id='time'>23:17</div>
+    </div>
+    <script>
+        video = document.getElementById('video');
+        wrapper = document.getElementById('wrapper');
+        clock = document.getElementById('time');
+        if (1 == 1) {
+            video.addEventListener('canplaythrough', start);
+        }
+        else {
+            video.addEventListener('progress', progress);
+        }
+    </script>
+</body>
+
+</html>
