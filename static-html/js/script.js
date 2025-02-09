@@ -11,12 +11,11 @@ function setVideoPosition() {
     if (x < 0) { x += day; }
     const y = x / day;
     video.currentTime = video.duration * y;
-    console.log('setVideoPosition', video.currentTime);
-    setStyle(h*60+m)
+    setStyle(h * 60 + m)
 }
 
 function start(event) {
-        setVideoPosition();
+    setVideoPosition();
 }
 
 function getVideoPositionAsDayMinutes() {
@@ -41,7 +40,6 @@ function getStyle(hours) {
         [22, "night"],
     ].reverse()
     for (let [hour, style] of styles) {
-        console.log(hour, style)
         if (hours > hour) {
             return style;
         }
@@ -50,10 +48,11 @@ function getStyle(hours) {
 
 function setStyle(minutes) {
     const style = getStyle(minutes / 60);
-    console.log(style);
-    wrapper.classList=[style];
+    if (wrapper.classList != [style]) {
+        wrapper.classList = [style];
+    }
     const h = ('00' + Math.floor(minutes / 60)).slice(-2)
     const m = ('00' + Math.floor(minutes % 60)).slice(-2)
-    
+
     clock.innerText = `${h}:${m}`
 }
