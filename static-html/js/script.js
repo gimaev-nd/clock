@@ -16,13 +16,7 @@ function setVideoPosition() {
 }
 
 function start(event) {
-    const video = event.target;
-    duration = video.duration;
-    if (typeof (interval) === 'undefined') {
         setVideoPosition();
-        interval = setInterval(setVideoPosition, 10000);
-        console.log('=========')
-    }
 }
 
 function getVideoPositionAsDayMinutes() {
@@ -33,7 +27,7 @@ function getVideoPositionAsDayMinutes() {
     return t / 60;
 }
 
-function progress(event) {
+function progress() {
     const minutes = getVideoPositionAsDayMinutes();
     setStyle(minutes);
 }

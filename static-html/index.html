@@ -11,9 +11,8 @@
 
 <body>
     <div id="wrapper" class="abc">
-        <video id="video" src="/videos/background.mp4">
-        </video>
-        <div id='time'>23:17</div>
+        <video id="video" src="/videos/background.mp4" muted></video>
+        <div id='time'></div>
     </div>
     <script>
         video = document.getElementById('video');
@@ -21,9 +20,11 @@
         clock = document.getElementById('time');
         if (1 == 1) {
             video.addEventListener('canplaythrough', start);
+            interval = setInterval(setVideoPosition, 5000);
         }
         else {
-            video.addEventListener('progress', progress);
+            video.play();
+            interval = setInterval(progress, 500);
         }
     </script>
 </body>
