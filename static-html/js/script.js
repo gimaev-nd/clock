@@ -16,6 +16,7 @@ function setVideoPosition() {
 
 function start(event) {
     setVideoPosition();
+    video.removeEventListener('canplaythrough', start);
 }
 
 function getVideoPositionAsDayMinutes() {
@@ -54,5 +55,5 @@ function setStyle(minutes) {
     const h = ('00' + Math.floor(minutes / 60)).slice(-2)
     const m = ('00' + Math.floor(minutes % 60)).slice(-2)
 
-    clock.innerText = `${h}:${m}`
+    clock.innerText = `${h}:${m}`;
 }
