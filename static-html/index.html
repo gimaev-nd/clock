@@ -18,7 +18,7 @@
         video = document.getElementById('video');
         wrapper = document.getElementById('wrapper');
         clock = document.getElementById('time');
-        if (document.location.hash == '#demo') {
+        if (document.location.hash != '#demo') {
             video.addEventListener('canplaythrough', start);
             interval = setInterval(setVideoPosition, 5000);
         }
